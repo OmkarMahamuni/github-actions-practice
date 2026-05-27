@@ -1,0 +1,14 @@
+name: PR check
+
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    validate:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print PR Info
+              # github.head_ref gets the name of the branch the PR is coming from
+              run: echo "PR check running for branch ${GITHUB_HEAD_REF}"
